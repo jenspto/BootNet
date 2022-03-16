@@ -1,0 +1,12 @@
+C:\Users\Giovanni\source\repos\BootNet\BootNet\bin\Debug\net5.0\BootNet.deps.json
+C:\Users\Giovanni\source\repos\BootNet\BootNet\bin\Debug\net5.0\BootNet.dll
+C:\Users\Giovanni\source\repos\BootNet\BootNet\bin\Debug\net5.0\BootNet.pdb
+C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\BootNet.csproj.AssemblyReference.cache
+C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\BootNet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\BootNet.AssemblyInfoInputs.cache
+C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\BootNet.AssemblyInfo.cs
+C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\BootNet.csproj.CoreCompileInputs.cache
+C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\BootNet.dll
+C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\refint\BootNet.dll
+C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\BootNet.pdb
+C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\ref\BootNet.dll
