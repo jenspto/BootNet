@@ -23,7 +23,7 @@ namespace BootNet
             Console.WriteLine(@"| _ \/ _ \/ _ \|  _|| .  |/ -_)|  _|");
             Console.WriteLine(@"|___/\___/\___/ \__||_|\_|\___| \__|");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("If you want to donate to the BootNet project, you can donate at http://paypal.me/ptobuon. 50% of my earnings will go to charity for Ukraine.");
+            Console.WriteLine("If you want to donate to the BootNet project, you can donate at http://ko-fi.com/ptobuon. 50% of my earnings will go to charity for Ukraine.");
             Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("(c) 2022 Pto Buon. All rights reserved.");

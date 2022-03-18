@@ -521,11 +521,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Giovanni\\source\\repos\\BootNet\\BootNet\\BootNet.csproj",
+      "projectUniqueName": "C:\\source\\BootNet\\BootNet\\BootNet.csproj",
       "projectName": "BootNet",
-      "projectPath": "C:\\Users\\Giovanni\\source\\repos\\BootNet\\BootNet\\BootNet.csproj",
+      "projectPath": "C:\\source\\BootNet\\BootNet\\BootNet.csproj",
       "packagesPath": "C:\\Users\\Giovanni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Giovanni\\source\\repos\\BootNet\\BootNet\\obj\\",
+      "outputPath": "C:\\source\\BootNet\\BootNet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Giovanni\\AppData\\Roaming\\NuGet\\NuGet.Config",

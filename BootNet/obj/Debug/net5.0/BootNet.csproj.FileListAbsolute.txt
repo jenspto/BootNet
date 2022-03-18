@@ -10,3 +10,15 @@ C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\BootNet.dll
 C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\refint\BootNet.dll
 C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\BootNet.pdb
 C:\Users\Giovanni\source\repos\BootNet\BootNet\obj\Debug\net5.0\ref\BootNet.dll
+C:\source\BootNet\BootNet\bin\Debug\net5.0\BootNet.deps.json
+C:\source\BootNet\BootNet\bin\Debug\net5.0\BootNet.dll
+C:\source\BootNet\BootNet\bin\Debug\net5.0\BootNet.pdb
+C:\source\BootNet\BootNet\obj\Debug\net5.0\BootNet.csproj.AssemblyReference.cache
+C:\source\BootNet\BootNet\obj\Debug\net5.0\BootNet.GeneratedMSBuildEditorConfig.editorconfig
+C:\source\BootNet\BootNet\obj\Debug\net5.0\BootNet.AssemblyInfoInputs.cache
+C:\source\BootNet\BootNet\obj\Debug\net5.0\BootNet.AssemblyInfo.cs
+C:\source\BootNet\BootNet\obj\Debug\net5.0\BootNet.csproj.CoreCompileInputs.cache
+C:\source\BootNet\BootNet\obj\Debug\net5.0\BootNet.dll
+C:\source\BootNet\BootNet\obj\Debug\net5.0\refint\BootNet.dll
+C:\source\BootNet\BootNet\obj\Debug\net5.0\BootNet.pdb
+C:\source\BootNet\BootNet\obj\Debug\net5.0\ref\BootNet.dll
