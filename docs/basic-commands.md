@@ -20,3 +20,7 @@ The kernel is divided in BeforeRun() void and Run() void:
 The void Before Run () will be repeated only once and instead the void Run () will always be in loop.
 
 currentPath string can be added for path and file manager.
+
+### Application of basic commands
+- shutdown: do a ACPI shutdown
+- reboot: do a ACPI reboot
