@@ -1,17 +1,11 @@
-﻿using Cosmos.HAL.Drivers.PCI.Video;
-using Cosmos.System.FileSystem;
-using Cosmos.System.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Text;
+﻿using System;
 using Sys = Cosmos.System;
 
 namespace BootNet
 {
     public class Kernel : Sys.Kernel
     {
+
         protected override void BeforeRun()
         {
             Console.WriteLine("BootNet booted successfully.");
@@ -30,15 +24,17 @@ namespace BootNet
             Console.WriteLine("Documentation: http://pto-buon.github.io/BootNet");
             Console.WriteLine("Source: http://github.com/pto-buon/BootNet");
         }
-        String currentPath = @"0:\";
-        
+
+
         protected override void Run()
         {
-            Console.Write(currentPath + ">");
+
+            Console.Write("root@pc $ ");
             var input = Console.ReadLine().ToLower();
             switch (input)
             {
                 default: Console.WriteLine("Bad command or file name."); break;
+                case "": Console.WriteLine(); break;
                 case "shutdown": Commands.Power.Shutdown(); break;
                 case "reboot": Commands.Power.Reboot(); break;
                 case "ip": Commands.Network.IP(); break;
@@ -48,6 +44,9 @@ namespace BootNet
                 case "ftp": Commands.Network.FTP(); break;
                 case "tpc": Commands.Network.TCP(); break;
                 case "udp": Commands.Network.UDP(); break;
+                case "clear": Commands.ConsoleText.Clear(); break;
+                case "init": BeforeRun(); break;
+                case "echo": Commands.ConsoleText.Echo(); break;
             }
         }
     }

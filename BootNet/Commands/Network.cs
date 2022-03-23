@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Cosmos.HAL;
+﻿using Cosmos.HAL;
 using Cosmos.System.FileSystem;
 using Cosmos.System.FileSystem.VFS;
-using Cosmos.System.Network;
 using Cosmos.System.Network.Config;
 using Cosmos.System.Network.IPv4;
 using Cosmos.System.Network.IPv4.TCP;
@@ -15,7 +8,8 @@ using Cosmos.System.Network.IPv4.TCP.FTP;
 using Cosmos.System.Network.IPv4.UDP;
 using Cosmos.System.Network.IPv4.UDP.DHCP;
 using Cosmos.System.Network.IPv4.UDP.DNS;
-using Sys = Cosmos.System;
+using System;
+using System.Text;
 
 namespace BootNet.Commands
 {
@@ -28,29 +22,25 @@ namespace BootNet.Commands
         }
         public static void DHCP()
         {
-            using (var xClient = new DHCPClient())
-            {
-                /** Send a DHCP Discover packet **/
-                //This will automatically set the IP config after DHCP response
-                xClient.SendDiscoverPacket();
-            }
+            using var xClient = new DHCPClient();
+            /** Send a DHCP Discover packet **/
+            //This will automatically set the IP config after DHCP response
+            xClient.SendDiscoverPacket();
         }
         public static void TCP()
         {
-            using (var xServer = new TcpListener(4242))
-            {
-                /** Start server **/
-                xServer.Start();
+            using var xServer = new TcpListener(4242);
+            /** Start server **/
+            xServer.Start();
 
-                /** Accept incoming TCP connection **/
-                var client = xServer.AcceptTcpClient(); //blocking
+            /** Accept incoming TCP connection **/
+            var client = xServer.AcceptTcpClient(); //blocking
 
-                /** Stop server **/
-                xServer.Stop();
-
-                /** Send data **/
-                client.Send(Encoding.ASCII.GetBytes(File.ReadAllText(@"0:\tcp.txt")));
-            }
+            /** Stop server **/
+            xServer.Stop();
+            var input = Console.ReadLine().ToLower();
+            /** Send data **/
+            client.Send(Encoding.ASCII.GetBytes(input));
         }
         public static void FTP()
         {
@@ -58,39 +48,36 @@ namespace BootNet.Commands
             var fs = new CosmosVFS();
             VFSManager.RegisterVFS(fs);
 
-            using (var xServer = new FtpServer(fs, "0:\\"))
-            {
-                /** Listen for new FTP client connections **/
-                xServer.Listen();
-            }
+            using var xServer = new FtpServer(fs, "0:\\");
+            /** Listen for new FTP client connections **/
+            xServer.Listen();
         }
         public static void UDP()
         {
-            using (var xClient = new UdpClient(4242))
-            {
-                xClient.Connect(new Address(192, 168, 1, 70), 4242);
+            using var xClient = new UdpClient(4242);
+            xClient.Connect(new Address(192, 168, 1, 70), 4242);
 
-                /** Send data **/
-                xClient.Send(Encoding.ASCII.GetBytes(File.ReadAllText(@"0:\udp.txt")));
+            /** Send data **/
+            Console.Write("Domain: ");
+            var input = Console.ReadLine().ToLower();
+            xClient.Send(Encoding.ASCII.GetBytes(input));
 
-                /** Receive data **/
-                var endpoint = new EndPoint(Address.Zero, 0);
-                var data = xClient.Receive(ref endpoint);  //set endpoint to remote machine IP:port
-                var data2 = xClient.NonBlockingReceive(ref endpoint); //retrieve receive buffer without waiting
-            }
+            /** Receive data **/
+            var endpoint = new EndPoint(Address.Zero, 0);
+            var data = xClient.Receive(ref endpoint);  //set endpoint to remote machine IP:port
+            var data2 = xClient.NonBlockingReceive(ref endpoint); //retrieve receive buffer without waiting
         }
         public static void DNS()
         {
-            using (var xClient = new DnsClient())
-            {
-                xClient.Connect(new Address(192, 168, 1, 254)); //DNS Server address
+            using var xClient = new DnsClient();
+            xClient.Connect(new Address(192, 168, 1, 254)); //DNS Server address
+            Console.Write("Domain: ");
+            var input = Console.ReadLine().ToLower();
+            /** Send DNS ask for a single domain name **/
+            xClient.SendAsk(input);
 
-                /** Send DNS ask for a single domain name **/
-                xClient.SendAsk(File.ReadAllText(@"0:\dns.txt"));
-
-                /** Receive DNS Response **/
-                Address destination = xClient.Receive(); //can set a timeout value
-            }
+            /** Receive DNS Response **/
+            Address destination = xClient.Receive(); //can set a timeout value
         }
         public static void IP()
         {
