@@ -1,6 +1,7 @@
 ﻿using System;
 using Sys = Cosmos.System;
 
+
 namespace BootNet
 {
     public class Kernel : Sys.Kernel
@@ -10,13 +11,10 @@ namespace BootNet
         {
             Console.WriteLine("BootNet booted successfully.");
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(@" ___            _    _  _       _   ");
             Console.WriteLine(@"| _ ) ___  ___ | |_ | \| | ___ | |_ ");
-            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(@"| _ \/ _ \/ _ \|  _|| .  |/ -_)|  _|");
             Console.WriteLine(@"|___/\___/\___/ \__||_|\_|\___| \__|");
-            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("If you want to donate to the BootNet project, you can donate at http://ko-fi.com/ptobuon. 50% of my earnings will go to charity for Ukraine.");
             Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.White;
@@ -28,25 +26,13 @@ namespace BootNet
 
         protected override void Run()
         {
-
-            Console.Write("root@pc $ ");
+            Console.Write("root@" + pc + "$");
             var input = Console.ReadLine().ToLower();
             switch (input)
             {
                 default: Console.WriteLine("Bad command or file name."); break;
                 case "": Console.WriteLine(); break;
-                case "shutdown": Commands.Power.Shutdown(); break;
-                case "reboot": Commands.Power.Reboot(); break;
-                case "ip": Commands.Network.IP(); break;
-                case "dns": Commands.Network.DNS(); break;
-                case "dhcp": Commands.Network.DHCP(); break;
-                case "setip": Commands.Network.IPv4(); break;
-                case "ftp": Commands.Network.FTP(); break;
-                case "tpc": Commands.Network.TCP(); break;
-                case "udp": Commands.Network.UDP(); break;
-                case "clear": Commands.ConsoleText.Clear(); break;
-                case "init": BeforeRun(); break;
-                case "echo": Commands.ConsoleText.Echo(); break;
+                case "ftp": BootNet.Commands.FTP.Description(); break;
             }
         }
     }
