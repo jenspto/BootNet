@@ -69,10 +69,6 @@ artifacts:
 #  files:
 #    - Docs/
 #    - .github/
-#    - Artwork/
 #    - '**/*.md'
-#    - LICENSE.txt
-#    - README.txt
+#    - README.md
 #    - .gitignore
-#    - source/Archive/
-#    - Users/
