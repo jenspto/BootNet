@@ -28,5 +28,10 @@ namespace BootNet.Commands
             Cosmos.System.Power.Shutdown();
             Cosmos.System.Power.QemuShutdown();
         }
+        public static void Reboot()
+        {
+            Cosmos.System.Power.Reboot();
+            Cosmos.System.Power.QemuReboot();
+        }
     }
 }

@@ -34,6 +34,8 @@ namespace BootNet
                     case "": { Console.WriteLine(); } break;
                     case "echo": Basic.Echo(); break;
                     case "shutdown": Basic.Shutdown(); break;
+                    case "reboot": Basic.Reboot(); break;
+
                 }
             }
             catch(Exception e)
