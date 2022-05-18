@@ -33,5 +33,13 @@ namespace BootNet.Commands
             Cosmos.System.Power.Reboot();
             Cosmos.System.Power.QemuReboot();
         }
+        public static void Clear()
+        {
+            Console.Clear();
+        }
+        public static void Info()
+        {
+            
+        }
     }
 }
