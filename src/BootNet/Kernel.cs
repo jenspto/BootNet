@@ -50,6 +50,7 @@ namespace BootNet
                     (int)Cosmos.System.MouseManager.X + 12, (int)Cosmos.System.MouseManager.Y + 12);
 
                 canvas.Display();
+                canvas.DrawString();
                 canvas.Clear(Color.Black); 
             }
             catch (Exception e)
@@ -58,14 +59,6 @@ namespace BootNet
                 ErrorScreen.Panic();
             }
         }
-        protected override void AfterRun()
-        {
-            
-        }
-        protected override void OnBoot()
-        {
-            Console.Clear();
-            Console.WriteLine("Booting...");
-        }
+        
     }
 }
