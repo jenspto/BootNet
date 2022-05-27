@@ -40,18 +40,17 @@ namespace BootNet
             try
             {
 
-                Pen bluepen = new Pen(Color.Cyan);
-                Pen brownpen = new Pen(Color.FromArgb(101, 67, 33));
+                Pen white = new Pen(Color.White);
 
-                canvas.DrawLine(bluepen, (int)Cosmos.System.MouseManager.X, (int)Cosmos.System.MouseManager.Y,
+                canvas.DrawLine(white, (int)Cosmos.System.MouseManager.X, (int)Cosmos.System.MouseManager.Y,
                     (int)Cosmos.System.MouseManager.X + 6, (int)Cosmos.System.MouseManager.Y);
-                canvas.DrawLine(bluepen, (int)Cosmos.System.MouseManager.X, (int)Cosmos.System.MouseManager.Y,
+                canvas.DrawLine(white, (int)Cosmos.System.MouseManager.X, (int)Cosmos.System.MouseManager.Y,
                     (int)Cosmos.System.MouseManager.X, (int)Cosmos.System.MouseManager.Y + 6);
-                canvas.DrawLine(brownpen, (int)Cosmos.System.MouseManager.X, (int)Cosmos.System.MouseManager.Y,
+                canvas.DrawLine(white, (int)Cosmos.System.MouseManager.X, (int)Cosmos.System.MouseManager.Y,
                     (int)Cosmos.System.MouseManager.X + 12, (int)Cosmos.System.MouseManager.Y + 12);
 
                 canvas.Display();
-                canvas.Clear(Color.Green); 
+                canvas.Clear(Color.Black); 
             }
             catch (Exception e)
             {
