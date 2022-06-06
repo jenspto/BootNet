@@ -59,10 +59,10 @@ artifacts:
   - path: 'TestResult.xml'
 
 
-#skip_commits:
-#  files:
-#    - Docs/
-#    - .github/
-#    - '**/*.md'
-#    - README.md
-#    - .gitignore
+skip_commits:
+  files:
+    - docs/
+    - .github/
+    - '**/*.md'
+    - README.md
+    - .gitignore
