@@ -11,8 +11,10 @@ using BootNet.Commands;
 
 namespace BootNet
 {
+    
     public class Kernel : Sys.Kernel
     {
+        String path;
         protected override void BeforeRun()
         {
             Console.WriteLine("BootNet booted successfully!");
@@ -21,6 +23,12 @@ namespace BootNet
 
         protected override void Run()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("root@bootnet ");
+            path = @"0:\";
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write(path);
+            Console.ForegroundColor = ConsoleColor.White;
             var input = Console.ReadLine().ToLowerInvariant();
             switch (input)
             {

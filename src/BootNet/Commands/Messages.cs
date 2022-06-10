@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BootNet.Commands
@@ -30,6 +31,7 @@ namespace BootNet.Commands
         public static void NetMessage()
         {
             Console.WriteLine("Network connected. Your ip is: "); Network.WriteIp();
+            
         }
         public static void Clear()
         {
