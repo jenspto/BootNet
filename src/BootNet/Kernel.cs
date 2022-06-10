@@ -26,6 +26,9 @@ namespace BootNet
             {
                 default: Messages.ErrorMessage(); break;
                 case "help": Messages.HelpMessage(); break;
+                case "": break;
+                case "clear": Commands.Messages.Clear(); break;
+                case "net": Network.Connect(); break; 
                 case "cat": Filesystem.CatCommand(); break;
                 
             }

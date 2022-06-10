@@ -27,5 +27,13 @@ namespace BootNet.Commands
             Console.WriteLine("ip: View the current ip address");
             Console.WriteLine("ftpserver: Make this session as a FTP server.");
         }
+        public static void NetMessage()
+        {
+            Console.WriteLine("Network connected. Your ip is: "); Network.WriteIp();
+        }
+        public static void Clear()
+        {
+            Console.Clear();
+        }
     }
 }
