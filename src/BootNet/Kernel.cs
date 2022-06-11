@@ -35,6 +35,7 @@ namespace BootNet
                 default: Messages.ErrorMessage(); break;
                 case "help": Messages.HelpMessage(); break;
                 case "cd": Filesystem.CdCommand(); break;
+                case "newfolder": Filesystem.NewFolderCommand(); break;
                 case "": break;
                 case "clear": Commands.Messages.Clear(); break;
                 case "net": Network.Connect(); break; 
