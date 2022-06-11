@@ -14,10 +14,11 @@ namespace BootNet
     
     public class Kernel : Sys.Kernel
     {
-        String path;
+        public static String path { get; set; }
         protected override void BeforeRun()
         {
             Console.WriteLine("BootNet booted successfully!");
+            path = @"0:\";
             Filesystem.InitFilesystem();
         }
 
@@ -25,19 +26,20 @@ namespace BootNet
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("root@bootnet ");
-            path = @"0:\";
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.Write(path);
+            Console.Write(path + " ");
             Console.ForegroundColor = ConsoleColor.White;
             var input = Console.ReadLine().ToLowerInvariant();
             switch (input)
             {
                 default: Messages.ErrorMessage(); break;
                 case "help": Messages.HelpMessage(); break;
+                case "cd": Filesystem.CdCommand(); break;
                 case "": break;
                 case "clear": Commands.Messages.Clear(); break;
                 case "net": Network.Connect(); break; 
-                case "cat": Filesystem.CatCommand(); break;
+                case "edit": Filesystem.EditCommand(); break;
+                case "dir": Filesystem.DirCommand(); break;
                 
             }
         }

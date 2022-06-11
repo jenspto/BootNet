@@ -13,9 +13,16 @@ namespace BootNet.Commands
         static readonly Sys.FileSystem.CosmosVFS fs = new();
         public static void InitFilesystem()
         {
-            Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
+            try
+            {
+                Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
+            }catch(Exception e)
+            {
+                Drivers.ErrorScreen.ErrorText = e;
+                Drivers.ErrorScreen.Panic();
+            }
         }
-        public static void CatCommand()
+        public static void EditCommand()
         {
             Console.Write("Filename: ");
             var fn = Console.ReadLine();
@@ -29,6 +36,32 @@ namespace BootNet.Commands
             {
                 Drivers.ErrorScreen.ErrorText = e;
                 Drivers.ErrorScreen.Panic();
+            }
+        }
+        public static void CdCommand()
+        {
+            Console.Write("Go to: ");
+            var cd = Console.ReadLine().ToLowerInvariant();
+            if (Directory.Exists(cd))
+            {
+                Kernel.path = cd;
+            }
+            else
+            {
+                Console.WriteLine("Directory not found.");
+            }
+        }
+        public static void DirCommand()
+        {
+            var directory_list = Directory.GetDirectories(Kernel.path);
+            var files_list = Directory.GetFiles(Kernel.path);
+            foreach (var file in files_list)
+            {
+                Console.WriteLine(file);
+            }
+            foreach (var dir in directory_list)
+            {
+                Console.WriteLine(dir);
             }
         }
     }
