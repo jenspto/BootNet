@@ -32,16 +32,19 @@ namespace BootNet
             var input = Console.ReadLine().ToLowerInvariant();
             switch (input)
             {
+                    //Messages
                 default: Messages.ErrorMessage(); break;
                 case "help": Messages.HelpMessage(); break;
-                case "cd": Filesystem.CdCommand(); break;
-                case "newfolder": Filesystem.NewFolderCommand(); break;
                 case "": break;
                 case "clear": Commands.Messages.Clear(); break;
-                case "net": Network.Connect(); break; 
-                case "edit": Filesystem.EditCommand(); break;
+                    //Filesystem
+                case "cd": Filesystem.CdCommand(); break;
+                case "fs --new --folder": Filesystem.NewFolderCommand(); break;
+                case "fs --new --file": Filesystem.NewFileCommand(); break;
                 case "dir": Filesystem.DirCommand(); break;
-                
+                case "fs --edit": Filesystem.EditCommand(); break;
+                    //Network
+                case "net --connect": Network.Connect(); break;                 
             }
         }
         

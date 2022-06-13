@@ -10,7 +10,7 @@ namespace BootNet.Drivers
     public class ErrorScreen
     {
         
-        public static object ErrorText { get; set; }
+        public static String ErrorText;
         public static void Panic()
         {
             

@@ -23,7 +23,7 @@ namespace BootNet.Commands
             }
             catch(Exception e)
             {
-                Drivers.ErrorScreen.ErrorText = e;
+                Drivers.ErrorScreen.ErrorText = e.ToString();
                 Drivers.ErrorScreen.Panic();
             }
         }

@@ -16,9 +16,10 @@ namespace BootNet.Commands
             try
             {
                 Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
-            }catch(Exception e)
+            }
+            catch(Exception e)
             {
-                Drivers.ErrorScreen.ErrorText = e;
+                Drivers.ErrorScreen.ErrorText = e.ToString();
                 Drivers.ErrorScreen.Panic();
             }
         }
@@ -34,14 +35,13 @@ namespace BootNet.Commands
             }
             catch (Exception e)
             {
-                Drivers.ErrorScreen.ErrorText = e;
-                Drivers.ErrorScreen.Panic();
+                Console.WriteLine(e);
             }
         }
         public static void CdCommand()
         {
             Console.Write("Go to: ");
-            var cd = Console.ReadLine().ToLowerInvariant();
+            var cd = Console.ReadLine().ToLowerInvariant().ToString();
             if (Directory.Exists(cd))
             {
                 Kernel.path = cd;
@@ -66,9 +66,22 @@ namespace BootNet.Commands
         }
         public static void NewFolderCommand()
         {
-            Console.Write("New folder name: ");
-            var dir = Console.ReadLine();
-            Directory.CreateDirectory(dir);
+            try
+            {
+                Console.Write("New folder name: ");
+                var dir = Console.ReadLine().ToString();
+                Directory.CreateDirectory(dir);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+        public static void NewFileCommand()
+        {
+            Console.Write("File name: ");
+            var file = Console.ReadLine().ToLowerInvariant().ToString();
+            File.Create(file);
         }
     }
 }
