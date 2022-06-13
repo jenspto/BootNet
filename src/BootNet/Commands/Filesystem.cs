@@ -64,5 +64,11 @@ namespace BootNet.Commands
                 Console.WriteLine(dir);
             }
         }
+        public static void NewFolderCommand()
+        {
+            Console.Write("New folder name: ");
+            var dir = Console.ReadLine();
+            Directory.CreateDirectory(dir);
+        }
     }
 }

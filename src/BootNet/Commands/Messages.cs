@@ -18,14 +18,7 @@ namespace BootNet.Commands
         public static void HelpMessage()
         {
             Console.WriteLine("=====Commands=====");
-            Console.WriteLine("help: Show this message");
-            Console.WriteLine("cat: Edit a file");
-            Console.WriteLine("new: Create a file");
-            Console.WriteLine("del: Delete a file");
-            Console.WriteLine("view: View a file");
-            Console.WriteLine("net: Connect to the network");
-            Console.WriteLine("ip: View the current ip address");
-            Console.WriteLine("ftpserver: Make this session as a FTP server.");
+            
         }
         public static void NetMessage()
         {
