@@ -1,26 +1,26 @@
-﻿using Cosmos.HAL;
-using Cosmos.System.Graphics;
-using Cosmos.System.Network.Config;
-using Cosmos.System.Network.IPv4;
-using Cosmos.System.Network.IPv4.UDP.DHCP;
+﻿using Cosmos.System.Graphics;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Text;
 using Sys = Cosmos.System;
+
 
 namespace BootNet
 {
     public class Kernel : Sys.Kernel
     {
+        public static Canvas canvas;
         protected override void BeforeRun()
         {
             Graphics.Canvas.DrawCanvas();
-            Graphics.Canvas.DrawCursor();
+            Drivers.Cursor.DrawCursor();
+            Graphics.Canvas.DrawDesktop();
         }
-        
         protected override void Run()
         {
-            Graphics.Canvas.UpdateCursor();
+            Drivers.Cursor.UpdateCursor();
+            Graphics.Canvas.DrawTaskBar();
         }
     }
 }

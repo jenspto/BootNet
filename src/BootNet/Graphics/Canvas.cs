@@ -5,27 +5,24 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sys = Cosmos.System;
-
-namespace BootNet.Graphics { 
-    
+using System.IO;
+namespace BootNet.Graphics
+{
     public class Canvas
     {
         public static void DrawCanvas()
         {
-            KernelHelpers.canvas = new SVGAIICanvas(new Mode(800, 600, ColorDepth.ColorDepth32));
-            KernelHelpers.canvas.Clear(Color.Black);
+            Kernel.canvas = new SVGAIICanvas(new Mode(800, 600, ColorDepth.ColorDepth32));
+            Kernel.canvas.Clear(Color.Black);
         }
-        public static void DrawCursor()
+        public static void DrawDesktop()
         {
-            Sys.MouseManager.ScreenWidth = 800;
-            Sys.MouseManager.ScreenHeight = 600;
-            Sys.MouseManager.X = (uint)((int)KernelHelpers.canvas.Mode.Columns / 2);
-            Sys.MouseManager.Y = (uint)((int)KernelHelpers.canvas.Mode.Rows / 2);
+            
         }
-        public static void UpdateCursor()
+        public static void DrawTaskBar()
         {
-
+            Pen pen = new(Color.DarkSlateGray);
+            Kernel.canvas.DrawFilledRectangle(pen, 0, 0, 800, 25);
         }
     }
 }
