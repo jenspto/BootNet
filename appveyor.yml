@@ -2,8 +2,7 @@ version: 0.2.{build}
 image: Visual Studio 2022
 configuration: Debug-CI
 platform: Any CPU
-clone_folder: c:\Cosmos
-
+clone_folder: c:\BootNet
 
 
 init:
@@ -47,7 +46,7 @@ on_finish:
     }
 
 matrix:
-  fast_finish: true
+  fast_finish: false
   
 branches:
   only:
