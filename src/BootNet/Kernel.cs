@@ -21,7 +21,6 @@ namespace BootNet
         {
             Drivers.Cursor.UpdateCursor();
             Graphics.Canvas.DrawTaskBar();
-            Graphics.Canvas.DrawXY();
         }
     }
 }

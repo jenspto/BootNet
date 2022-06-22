@@ -9,7 +9,7 @@ using System.IO;
 using IL2CPU.API.Attribs;
 using Mouse = Cosmos.System.MouseManager;
 using MouseState = Cosmos.System.MouseState;
-
+using Cosmos.Core.Memory;
 
 namespace BootNet.Graphics
 {
@@ -19,24 +19,21 @@ namespace BootNet.Graphics
         public static void DrawCanvas()
         {
             Kernel.canvas = new SVGAIICanvas(new Mode(800, 600, ColorDepth.ColorDepth32));
-            Kernel.canvas.Clear(Color.Black);
+            Kernel.canvas.Clear(Color.DarkBlue);
             
         }
         public static void DrawTaskBar()
         {
-            Kernel.canvas.DrawFilledRectangle(new Pen(Color.Blue), 0, 0, 800, 25);
-            Graphics.Objects.DrawButton(new Pen(Color.Blue), new Pen(Color.White), 0, 0, "Start");
-            if (Mouse.MouseState == MouseState.Left && Mouse.Y >= 0 && Mouse.X<=10)
+            Graphics.Objects.DrawButton(new Pen(Color.Red), new Pen(Color.White), 0, 584, "Power Off");
+            if (Mouse.MouseState == MouseState.Left && Mouse.Y >= 584 && Mouse.X<=100)
             {
-                Kernel.canvas.DrawFilledRectangle(new Pen(Color.White), 100, 25, 100, 100);
+                Cosmos.System.Power.Shutdown();
             }
         }
         public static void DrawWallpaper()
         {
+            //Coming soon
         }
-        public static void DrawXY()
-        {
-            Drivers.ASC16.DrawACSIIString(Kernel.canvas, new Pen(Color.White), Mouse.X + " " + Mouse.Y, 800, 600);
-        }
+        
     }
 }

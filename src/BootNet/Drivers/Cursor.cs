@@ -33,7 +33,7 @@ namespace BootNet.Drivers
                 Kernel.canvas.DrawLine(cursorcolor, (int)Cosmos.System.MouseManager.X, (int)Cosmos.System.MouseManager.Y,
                 (int)Cosmos.System.MouseManager.X + 10, (int)Cosmos.System.MouseManager.Y + 10);
                 Kernel.canvas.Display();
-                Kernel.canvas.Clear(Color.Black);
+                Kernel.canvas.Clear(Color.DarkBlue);
             }
             catch (Exception e)
             {

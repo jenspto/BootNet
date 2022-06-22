@@ -12,8 +12,7 @@ namespace BootNet.Graphics
     {
         public static void DrawButton(Pen backgroundcolor, Pen textcolor, int x, int y, String s)
         {
-
-            Kernel.canvas.DrawFilledRectangle(backgroundcolor, x, y, 10, 16);
+            Kernel.canvas.DrawFilledRectangle(backgroundcolor, x, y, 100, 16);
             Drivers.ASC16.DrawACSIIString(Kernel.canvas, textcolor, s, x, y);
         }
     }
