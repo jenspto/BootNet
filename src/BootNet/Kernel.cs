@@ -15,12 +15,13 @@ namespace BootNet
         {
             Graphics.Canvas.DrawCanvas();
             Drivers.Cursor.DrawCursor();
-            Graphics.Canvas.DrawDesktop();
+            Commands.Filesystem.Start();
         }
         protected override void Run()
         {
             Drivers.Cursor.UpdateCursor();
             Graphics.Canvas.DrawTaskBar();
+            Graphics.Canvas.DrawXY();
         }
     }
 }
