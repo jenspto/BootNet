@@ -13,7 +13,7 @@ using Cosmos.Core.Memory;
 
 namespace BootNet.Graphics
 {
-    public class Canvas
+    public class Desktop
     {
         
         public static void DrawCanvas()
@@ -24,16 +24,12 @@ namespace BootNet.Graphics
         }
         public static void DrawTaskBar()
         {
-            Graphics.Objects.DrawButton(new Pen(Color.Red), new Pen(Color.White), 0, 584, "Power Off");
-            if (Mouse.MouseState == MouseState.Left && Mouse.Y >= 584 && Mouse.X<=100)
+            Kernel.canvas.DrawFilledRectangle(new Pen(Color.FromArgb(64, 64, 64)), 0, 584, 800, 16);
+            Graphics.Objects.DrawButton(new Pen(Color.FromArgb(64,64,64)), new Pen(Color.White), 0, 584, "Menu");
+            if (Mouse.MouseState == MouseState.Left && Mouse.Y >= 584 && Mouse.X >= 0 && Mouse.X <=100)
             {
-                Cosmos.System.Power.Shutdown();
+                Objects.DrawMenu(new Pen(Color.FromArgb(64, 64, 64)), new Pen(Color.White), 0, 504, "Notepad", "Files", "Console", "Reboot", "Shutdown");
             }
         }
-        public static void DrawWallpaper()
-        {
-            //Coming soon
-        }
-        
     }
 }

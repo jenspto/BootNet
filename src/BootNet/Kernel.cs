@@ -1,4 +1,5 @@
-﻿using Cosmos.System.Graphics;
+﻿using BootNet.Graphics;
+using Cosmos.System.Graphics;
 using System;
 using System.Drawing;
 using System.IO;
@@ -10,17 +11,17 @@ namespace BootNet
 {
     public class Kernel : Sys.Kernel
     {
-        public static Canvas canvas;
+        public static Sys.Graphics.Canvas canvas;
         protected override void BeforeRun()
         {
-            Graphics.Canvas.DrawCanvas();
-            Drivers.Cursor.DrawCursor();
+            Graphics.Desktop.DrawCanvas();
+            Cursor.DrawCursor();
             Commands.Filesystem.Start();
         }
         protected override void Run()
         {
-            Drivers.Cursor.UpdateCursor();
-            Graphics.Canvas.DrawTaskBar();
+            Cursor.UpdateCursor();
+            Graphics.Desktop.DrawTaskBar();
         }
     }
 }
