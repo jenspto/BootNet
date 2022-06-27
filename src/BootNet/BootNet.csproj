@@ -22,15 +22,18 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="Drivers\**" />
+      <EmbeddedResource Remove="Drivers\**" />
+      <None Remove="Drivers\**" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="Cosmos.Build" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.Debug.Kernel" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.System2" Version="0-*" NoWarn="NU1604" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="CosmosFtpServer" Version="1.0.1" NoWarn="NU1604;NU1605" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Drivers\" />
     </ItemGroup>
 
 
