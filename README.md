@@ -1,6 +1,6 @@
 # BootNet
-![AppVeyor](https://img.shields.io/appveyor/build/Pto/BootNet) 
-[![Discord](https://img.shields.io/discord/955877634187853834)](https://discord.gg/KNGTnbT9Ym?style=for-the-badge)
+[![AppVeyor](https://img.shields.io/appveyor/build/Pto/BootNet)](https://ci.appveyor.com/project/Pto/bootnet)
+[![Discord](https://img.shields.io/discord/955877634187853834)](https://discord.gg/KNGTnbT9Ym)
 
 An operative system based on Cosmos
 
