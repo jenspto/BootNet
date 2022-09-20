@@ -1,2 +1,2 @@
 # BootNet
-BootNet now is a organization! Check out [here](https://github.com/BootNetOS)
+BootNet now is Arco Cosmo! Check out [here](https://github.com/ArcoCosmos/)
