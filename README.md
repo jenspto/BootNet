@@ -1,2 +1,2 @@
 # BootNet
-BootNet now is Arco Cosmos! Check out [here](https://github.com/ArcoCosmos/)
+BootNet now is Oceano! Check out [here](https://github.com/OceanoOS/)
